@@ -1,0 +1,10 @@
+﻿build/
+dist/
+*.spec
+__pycache__/
+*.tmp
+*.py
+!archive_checker_gui.py
+!archive_checker_gui.spec
+archive/**
+!README.md No newline at end of file

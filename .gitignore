@@ -4,7 +4,7 @@ dist/
 __pycache__/
 *.tmp
 *.py
-!archive_checker_gui.py
-!archive_checker_gui.spec
+!archive-checker-merger-gui.py
+!archive-checker-merger-gui.spec
 archive/**
 !README.md No newline at end of file

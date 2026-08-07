@@ -12,7 +12,7 @@ Développée spécifiquement pour les collecteurs et archivistes de scans/mangas
 
 ---
 
-## 📸 Aperçu & Fonctionnalités Clés
+📸 Aperçu & Fonctionnalités Clés
 
 - **🔍 Scan Récursif & Diagnostic Asynchrone (`QThread`) :**
   - Inspection automatique des sous-dossiers sans figer l'interface.
@@ -38,13 +38,36 @@ Développée spécifiquement pour les collecteurs et archivistes de scans/mangas
 
 ---
 
-## 🛠️ Configuration Requise & Dépendances
+🛠️ Configuration Requise & Dépendances
 
 - **Python :** 3.10 ou supérieur
 - **Dépendances Python :**
   - `PyQt6` (Interface graphique)
   - `send2trash` (Gestion sécurisée de la corbeille OS)
   - `patool` (Support des formats RAR, 7Z, TAR, GZ)
+ 
+
+
+📖 Guide d'Utilisation
+Sélectionner un dossier : Cliquez sur 📁 Sélectionner ou glissez-déposez directement un dossier dans l'application.
+
+Analyser : L'application affiche la liste des archives avec le nombre de fichiers, les plages de séquences et la présence éventuelle de fichiers .bin.
+
+Formater : Cochez les archives nécessitant un ajustement et cliquez sur 🏷️ Formater en 0001.
+
+Fusionner : Cochez au moins 2 archives au format 0000 valide, choisissez un dossier de destination (optionnel) et cliquez sur ⚡ Fusionner.
+
+Nettoyer : Utilisez le bouton 🗑️ Corbeille pour envoyer les doublons ou fichiers inutiles vers la corbeille de votre système en toute sécurité.
+
+📄 Licence
+Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
+
+
+---
+
+### Points d'attention retenus lors de la rédaction :
+1. **Fidélité au code Python :** La liste des fonctionnalités reflète exactement la version **2.1** (colonne `.BIN`, gestion `send2trash`, bilinguisme FR/EN, garde-fou `0000`).
+2. **Technique & Pratique :** Inclusion des prérequis CLI (`patool`, `unrar`/`7z`), des c
 
 ---
 

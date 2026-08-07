@@ -1,6 +1,15 @@
 
 # Archive Checker, Renamer & Merger GUI (v2.1)
 
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg?logo=python&logoColor=white)
+![Framework GUI](https://img.shields.io/badge/GUI-PyQt6-green.svg?logo=qt&logoColor=white)
+![License](https://img.shields.io/badge/license-GPLv3-blue.svg?logo=gnu&logoColor=white)
+![Release Version](https://img.shields.io/badge/version-2.1-orange.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20Fedora-lightgrey.svg?logo=linux&logoColor=white)
+
+
+
+
 **Archive Checker, Renamer & Merger GUI** est une application desktop Python (PyQt6) dédiée à la gestion, l'analyse, la normalisation et la consolidation d'archives d'images (`.cbz`, `.zip`, `.rar`, `.7z`). 
 
 Développée spécifiquement pour les collecteurs et archivistes de scans/mangas, elle permet d'automatiser le contrôle de séquences, la détection de fichiers parasites (`.bin`), le renommage normalisé sur 4 chiffres (`0000`) et la fusion sécurisée en archives CBZ uniques.

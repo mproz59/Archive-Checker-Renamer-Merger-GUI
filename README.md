@@ -5,7 +5,7 @@
 ![Framework GUI](https://img.shields.io/badge/GUI-PyQt6-green.svg?logo=qt&logoColor=white)
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg?logo=gnu&logoColor=white)
 ![Release Version](https://img.shields.io/badge/version-2.1-orange.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20Fedora-lightgrey.svg?logo=linux&logoColor=white)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20)
 
 
 

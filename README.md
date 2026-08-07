@@ -46,8 +46,6 @@ Développée spécifiquement pour les collecteurs et archivistes de scans/mangas
   - `send2trash` (Gestion sécurisée de la corbeille OS)
   - `patool` (Support des formats RAR, 7Z, TAR, GZ)
 
-> **Note RAR / 7z :** Pour l'analyse des archives `.rar` et `.7z`, assurez-vous que les outils en ligne de commande correspondants (`unrar`, `7z` ou `p7zip`) sont installés sur votre système et accessibles dans le `PATH`.
-
 ---
 
 

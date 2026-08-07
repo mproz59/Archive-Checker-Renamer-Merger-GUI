@@ -1,11 +1,6 @@
 
 # Archive Checker, Renamer & Merger GUI (v2.1)
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
-![Framework](https://img.shields.io/badge/GUI-PyQt6-green.svg)
-![License](https://img.shields.io/badge/license-MIT-orange.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)
-
 **Archive Checker, Renamer & Merger GUI** est une application desktop Python (PyQt6) dédiée à la gestion, l'analyse, la normalisation et la consolidation d'archives d'images (`.cbz`, `.zip`, `.rar`, `.7z`). 
 
 Développée spécifiquement pour les collecteurs et archivistes de scans/mangas, elle permet d'automatiser le contrôle de séquences, la détection de fichiers parasites (`.bin`), le renommage normalisé sur 4 chiffres (`0000`) et la fusion sécurisée en archives CBZ uniques.
@@ -59,17 +54,11 @@ Fusionner : Cochez au moins 2 archives au format 0000 valide, choisissez un doss
 
 Nettoyer : Utilisez le bouton 🗑️ Corbeille pour envoyer les doublons ou fichiers inutiles vers la corbeille de votre système en toute sécurité.
 
+
+
 📄 Licence
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
 
-
----
-
-### Points d'attention retenus lors de la rédaction :
-1. **Fidélité au code Python :** La liste des fonctionnalités reflète exactement la version **2.1** (colonne `.BIN`, gestion `send2trash`, bilinguisme FR/EN, garde-fou `0000`).
-2. **Technique & Pratique :** Inclusion des prérequis CLI (`patool`, `unrar`/`7z`), des c
-
----
+Ce projet est sous licence **GNU General Public License v3.0 (GPLv3)** - voir le fichier [LICENSE](LICENSE) pour plus de détails. En raison de l'utilisation de **PyQt6** et **patool**, cette application est soumise aux termes du copyleft fort de la GPLv3.
 
 
 

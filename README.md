@@ -1,16 +1,55 @@
-# 📦 Archive Checker, Renamer & Merger GUI (v2.1)
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![PyQt6](https://img.shields.io/badge/GUI-PyQt6-green.svg)](https://pypi.org/project/PyQt6/)
-[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg)]()
+# Archive Checker, Renamer & Merger GUI (v2.1)
 
-> **[FR]** Application graphique sous Python / PyQt6 conçue pour automatiser le contrôle de qualité, le renommage normalisé (0001) et la fusion sécurisée d'archives de numérisation (Manga, Comics, E-books) en fichiers CBZ.
->
-> **[EN]** A Python / PyQt6 graphical utility designed to automate quality checks, standardized 4-digit renaming (0001), and safe CBZ archive merging for digital manga and comic archives.
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Framework](https://img.shields.io/badge/GUI-PyQt6-green.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)
+
+**Archive Checker, Renamer & Merger GUI** est une application desktop Python (PyQt6) dédiée à la gestion, l'analyse, la normalisation et la consolidation d'archives d'images (`.cbz`, `.zip`, `.rar`, `.7z`). 
+
+Développée spécifiquement pour les collecteurs et archivistes de scans/mangas, elle permet d'automatiser le contrôle de séquences, la détection de fichiers parasites (`.bin`), le renommage normalisé sur 4 chiffres (`0000`) et la fusion sécurisée en archives CBZ uniques.
 
 ---
 
-## 📜 License
-Distribué sous la licence GNU General Public License v3.0 (GPLv3). Voir le fichier `LICENSE` pour plus d'informations.  
-Distributed under the GNU General Public License v3.0 (GPLv3). See `LICENSE` for more information.
+## 📸 Aperçu & Fonctionnalités Clés
+
+- **🔍 Scan Récursif & Diagnostic Asynchrone (`QThread`) :**
+  - Inspection automatique des sous-dossiers sans figer l'interface.
+  - Détection explicite des fichiers corrompus/parasites (`.bin`) avec compteur dédié.
+  - Analyse des séquences numériques internes (détection des chapitres/pages manquants).
+  - Code couleur par statut : `OK`, `INCOMPLETE`, `ERROR (.BIN inside)`, `CRITICAL`, `WARNING`.
+
+- **🏷️ Formatage Standardisé sur 4 Chiffres (`Format 0000`) :**
+  - Normalisation automatique des noms de fichiers internes et des archives (ex: `1` ➔ `0001`, `3.5` ➔ `0003.5`).
+  - Prise en charge des numérotations décimales pour les demi-chapitres.
+
+- **⚡ Fusion Sécurisée en CBZ Unique :**
+  - Regroupement de plusieurs archives en un seul fichier `.cbz`.
+  - Réindexation séquentielle continue globale de toutes les pages (`0001.jpg`, `0002.jpg`, ...).
+  - Génération automatique de la nomenclature : `NOM_DOSSIER - XXXX to XXXX.cbz`.
+  - **Garde-fou strict :** Blocage de la fusion si les archives sélectionnées ne sont pas préalablement au format `0000`.
+
+- **🛡️ Sécurité des Données & Ergonomie :**
+  - **Corbeille OS intégrée (`send2trash`) :** Aucune suppression définitive irréversible lors des opérations de remplacement/nettoyage.
+  - **Glisser-Déposer (Drag & Drop) :** Importation directe de dossiers par simple dépôt sur la fenêtre.
+  - **Interface Bilingue dynamique :** Bascule instantanée Français / Anglais (FR/EN) sans redémarrage.
+  - **Tri & Filtrage Dynamiques :** Tri numérique réel sur les colonnes et recherche rapide en temps réel.
+
+---
+
+## 🛠️ Configuration Requise & Dépendances
+
+- **Python :** 3.10 ou supérieur
+- **Dépendances Python :**
+  - `PyQt6` (Interface graphique)
+  - `send2trash` (Gestion sécurisée de la corbeille OS)
+  - `patool` (Support des formats RAR, 7Z, TAR, GZ)
+
+> **Note RAR / 7z :** Pour l'analyse des archives `.rar` et `.7z`, assurez-vous que les outils en ligne de commande correspondants (`unrar`, `7z` ou `p7zip`) sont installés sur votre système et accessibles dans le `PATH`.
+
+---
+
+
+
+

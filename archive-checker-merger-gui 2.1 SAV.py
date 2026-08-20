@@ -26,7 +26,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QFont, QColor
 
-APP_VERSION = "2.2"
+APP_VERSION = "2.1"
 
 # --- Dictionnaire de traductions FR / EN ---
 TRANSLATIONS = {
@@ -81,26 +81,24 @@ TRANSLATIONS = {
             "📖 GUIDE D'UTILISATION (TUTORIEL PERMANENT)\n"
             "==================================================\n\n"
             "1. SÉLECTION ET ANALYSE :\n"
-            " • Cliquez sur '📁 Sélectionner' ou faites un Glisser-Déposer d'un dossier d'archives.\n"
-            " • L'application analyse récursivement les sous-dossiers (.cbz, .zip, .rar, .7z).\n"
-            " • Les fichiers sont automatiquement classés selon un ordre numérique naturel.\n"
-            " • Le scanner vérifie l'absence de fichiers indésirables (.bin) et affiche leur nombre exact.\n\n"
+            "   • Cliquez sur '📁 Sélectionner' ou faites un Glisser-Déposer d'un dossier d'archives.\n"
+            "   • L'application analyse récursivement les sous-dossiers (.cbz, .zip, .rar, .7z).\n"
+            "   • Le scanner vérifie l'absence de fichiers indésirables (.bin) et affiche leur nombre exact.\n\n"
             "2. FORMATAGE EN 0001 (SÉLECTION) :\n"
-            " • Cochez les archives à corriger, puis cliquez sur '🏷️ Formater en 0001'.\n"
-            " • L'application renomme les fichiers internes et le nom d'archive sur 4 chiffres (ex: 1 -> 0001, 3.5 -> 0003.5).\n\n"
+            "   • Cochez les archives à corriger, puis cliquez sur '🏷️ Formater en 0001'.\n"
+            "   • L'application renomme les fichiers internes et le nom d'archive sur 4 chiffres (ex: 1 -> 0001, 3.5 -> 0003.5).\n\n"
             "3. FUSION SÉCURISÉE EN CBZ :\n"
-            " • Cochez au moins 2 archives formatées en 'Format 0000' et cliquez sur '⚡ Fusionner'.\n"
-            " • Les images sont extraites, réordonnées séquentiellement et regroupées dans une archive CBZ unique.\n"
-            " • Le nom du CBZ est généré automatiquement : 'DOSSIER - XXXX to XXXX.cbz'.\n\n"
+            "   • Cochez au moins 2 archives formatées en 'Format 0000' et cliquez sur '⚡ Fusionner'.\n"
+            "   • Les images sont extraites, réordonnées séquentiellement et regroupées dans une archive CBZ unique.\n"
+            "   • Le nom du CBZ est généré automatiquement : 'DOSSIER - XXXX to XXXX.cbz'.\n\n"
             "4. OUTILS D'INTERFACE ET GESTION :\n"
-            " • 🔄 Actualiser : Rescanne instantanément le dossier source pour prendre en compte les ajouts/modifications.\n"
-            " • 🗑️ Corbeille : Envoie les archives cochées directement dans la Corbeille de votre OS.\n"
-            " • Tri Naturel Interactif : Cliquez sur les en-têtes de colonnes (Nom, Dossier, etc.) pour un tri qui respecte la suite logique des nombres.\n\n"
+            "   • 🔄 Actualiser : Rescanne instantanément le dossier source pour prendre en compte les ajouts/modifications.\n"
+            "   • 🗑️ Corbeille : Envoie les archives cochées directement dans la Corbeille de votre OS.\n"
+            "   • Tri Dynamique : Cliquez sur les en-têtes de colonnes du tableau pour trier les données.\n\n"
             "--------------------------------------------------\n"
-            "📌 NOTE DE VERSION v2.2 :\n"
-            " - Implémentation du Tri Naturel (Natural Sorting) pour l'analyse et toutes les colonnes du tableau.\n"
-            " - Résolution de l'ordre alphabétique contraignant (1, 2, 3... au lieu de 1, 10, 11, 2).\n"
-            " - Maintien du comptage précis des fichiers .BIN et du système de corbeille sécurisé.\n"
+            "📌 NOTE DE VERSION v2.1 :\n"
+            " - Affichage explicite du nombre de fichiers .BIN trouvés dans la colonne du tableau.\n"
+            " - Maintien du layout compact, de la corbeille OS et du tutoriel permanent.\n"
         )
     },
     "EN": {
@@ -154,34 +152,27 @@ TRANSLATIONS = {
             "📖 USER GUIDE (PERMANENT TUTORIAL)\n"
             "==================================================\n\n"
             "1. SELECTION & ANALYSIS:\n"
-            " • Click '📁 Select' or Drag and Drop an archive folder.\n"
-            " • The application recursively scans subfolders (.cbz, .zip, .rar, .7z).\n"
-            " • Files are automatically scanned in natural numerical order.\n"
-            " • The analyzer checks for corrupt/unwanted files (.bin) and displays their exact count.\n\n"
+            "   • Click '📁 Select' or Drag and Drop an archive folder.\n"
+            "   • The application recursively scans subfolders (.cbz, .zip, .rar, .7z).\n"
+            "   • The analyzer checks for corrupt/unwanted files (.bin) and displays their exact count.\n\n"
             "2. FORMAT TO 0001 (SELECTION):\n"
-            " • Check archives to fix, then click '🏷️ Format 0001'.\n"
-            " • Renames internal files and archive names to 4 digits (e.g. 1 -> 0001, 3.5 -> 0003.5).\n\n"
+            "   • Check archives to fix, then click '🏷️ Format 0001'.\n"
+            "   • Renames internal files and archive names to 4 digits (e.g. 1 -> 0001, 3.5 -> 0003.5).\n\n"
             "3. SAFE CBZ MERGING:\n"
-            " • Check at least 2 archives matching '0000 Format' and click '⚡ Merge'.\n"
-            " • Images are extracted, sequentially reordered, and packaged into a single CBZ archive.\n"
-            " • Automatic CBZ naming: 'FOLDER - XXXX to XXXX.cbz'.\n\n"
+            "   • Check at least 2 archives matching '0000 Format' and click '⚡ Merge'.\n"
+            "   • Images are extracted, sequentially reordered, and packaged into a single CBZ archive.\n"
+            "   • Automatic CBZ naming: 'FOLDER - XXXX to XXXX.cbz'.\n\n"
             "4. INTERFACE TOOLS & MANAGEMENT:\n"
-            " • 🔄 Refresh: Instantly rescans active folder for added or modified archives.\n"
-            " • 🗑️ Trash: Sends checked archives directly to system Recycle Bin.\n"
-            " • Interactive Natural Sorting: Click table headers to sort rows with correct numerical sequence.\n\n"
+            "   • 🔄 Refresh: Instantly rescans active folder for added or modified archives.\n"
+            "   • 🗑️ Trash: Sends checked archives directly to system Recycle Bin.\n"
+            "   • Dynamic Sorting: Click table headers to sort rows interactively.\n\n"
             "--------------------------------------------------\n"
-            "📌 RELEASE NOTES v2.2:\n"
-            " - Added Natural Sorting across all table columns and folder scanning.\n"
-            " - Fixed alphabetical numbering sort issue (1, 2, 3... instead of 1, 10, 11, 2).\n"
-            " - Preserved exact .BIN file count tracking and safe trash operations.\n"
+            "📌 RELEASE NOTES v2.1:\n"
+            " - Displays exact count of found .BIN files in the table column.\n"
+            " - Retains compact layout, OS Recycle Bin support, and permanent user guide.\n"
         )
     }
 }
-
-
-def natural_sort_key(s):
-    """ Découpe une chaîne en blocs de texte et de nombres entiers pour un tri naturel. """
-    return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', str(s))]
 
 
 def safe_move_to_trash(file_path):
@@ -200,11 +191,14 @@ def safe_move_to_trash(file_path):
     os.remove(clean_path)
 
 
-class NaturalSortTableWidgetItem(QTableWidgetItem):
-    """ Item personnalisé pour le tableau avec support du tri naturel (chiffres inclus). """
+class NumericTableWidgetItem(QTableWidgetItem):
+    """ Item personnalisé pour un tri numérique réel. """
     def __lt__(self, other):
         if isinstance(other, QTableWidgetItem):
-            return natural_sort_key(self.text()) < natural_sort_key(other.text())
+            try:
+                return float(self.text()) < float(other.text())
+            except ValueError:
+                pass
         return super().__lt__(other)
 
 
@@ -280,8 +274,7 @@ class ArchiveWorker(QThread):
                 if file.lower().endswith(supported_exts):
                     archive_files.append(os.path.join(root, file))
 
-        # Tri naturel dès la collecte initiale des fichiers
-        archive_files.sort(key=natural_sort_key)
+        archive_files.sort()
         total_files = len(archive_files)
 
         for index, archive_path in enumerate(archive_files):
@@ -629,7 +622,7 @@ class ArchiveCheckerApp(QMainWindow):
         self.lbl_source_folder_info = QLabel()
         self.lbl_source_folder_info.setFont(QFont("Arial", 9, QFont.Weight.Bold))
         self.lbl_source_folder_info.setStyleSheet("color: #1565c0; margin-bottom: 2px;")
-
+        
         self.lbl_details_title = QLabel()
         self.lbl_details_title.setFont(QFont("Arial", 9, QFont.Weight.Bold))
 
@@ -893,7 +886,7 @@ class ArchiveCheckerApp(QMainWindow):
     def stop_analysis(self):
         if self.worker:
             self.worker.stop()
-        self.lbl_status.setText(TRANSLATIONS[self.current_lang]["status_stopped"])
+            self.lbl_status.setText(TRANSLATIONS[self.current_lang]["status_stopped"])
 
     def update_progress(self, current, total, filename):
         t = TRANSLATIONS[self.current_lang]
@@ -912,15 +905,16 @@ class ArchiveCheckerApp(QMainWindow):
         chk_item.setCheckState(Qt.CheckState.Unchecked)
         chk_item.setData(Qt.ItemDataRole.UserRole, res["path"])
 
-        item_folder = NaturalSortTableWidgetItem(res["parent_folder"])
-        item_name = NaturalSortTableWidgetItem(res["filename"])
-        item_fmt = NaturalSortTableWidgetItem(t["yes"] if res["is_4_digits"] else t["no"])
-        item_status = NaturalSortTableWidgetItem(res["status"])
-        item_count = NaturalSortTableWidgetItem(f"{res['file_count']}")
-        item_range = NaturalSortTableWidgetItem(res["range"])
+        item_folder = QTableWidgetItem(res["parent_folder"])
+        item_name = QTableWidgetItem(res["filename"])
+        item_fmt = QTableWidgetItem(t["yes"] if res["is_4_digits"] else t["no"])
+        item_status = QTableWidgetItem(res["status"])
+        item_count = NumericTableWidgetItem(f"{res['file_count']}")
+        item_range = QTableWidgetItem(res["range"])
 
+        # Affichage enrichi avec compteur de fichiers .BIN
         bin_text = f"{t['yes']} ({res['bin_count']})" if res["has_bin"] else t["no"]
-        item_bin = NaturalSortTableWidgetItem(bin_text)
+        item_bin = QTableWidgetItem(bin_text)
 
         if "CRITICAL" in res["status"] or "CRITIQUE" in res["status"] or "ERROR" in res["status"] or "ERREUR" in res["status"]:
             item_status.setBackground(QColor("#ffcdd2"))

@@ -1,4 +1,4 @@
-# 📦 Archive Checker, Renamer & Merger GUI (v2.1)
+# 📦 Archive Checker, Renamer & Merger GUI (v2.2)
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyQt6](https://img.shields.io/badge/GUI-PyQt6-green.svg)](https://pypi.org/project/PyQt6/)
